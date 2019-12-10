@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<br><br><br>
+<form form action="/graficar/seleccion" method="POST">
+    <div class="container">
+        <h3>Generar graficas</h3>
+        <div class="row">
+            <div class="mb-3">
+                <select name="columna" class="browser-default custom-select" required>
+                    <option selected>Seleccione la columna a graficar</option>
+                    {% for option in titles %}
+                    <option value="{{titles[loop.index] }}">{{ titles[loop.index] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <select name="tipo" class="browser-default custom-select" required>
+                    <option selected>Seleccione tipo de grafica</option>
+                    <option value="Puntos">Puntos</option>
+                    <option value="Lineas">Lineas</option>
+                    <option value="Pastel">Pastel</option>
+                    <option value="Barras">Barras</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="text" placeholder="Nombre gráfica" name="nombre" required autocomplete="off"><br>
+                </select>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="input-group-text" id="basic-addon2">Graficar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

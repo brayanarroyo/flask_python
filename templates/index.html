@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+{% block body %}
+<br><br><br>
+<div>
+  <form action="/obtener_csv" method="POST" enctype="multipart/form-data" class="container">
+    <input class="form-control" type="file" name="archivo" required><br>
+    <input class="form-control btn btn-primary" type="submit" value="Subir Archivo">
+  </form>
+</div>
+    
+{% endblock %}
